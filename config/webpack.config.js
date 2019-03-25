@@ -449,6 +449,14 @@ module.exports = function(webpackEnv) {
             // When you `import` an asset, you get its (virtual) filename.
             // In production, they would get copied to the `build` folder.
             // This loader doesn't use a "test" so it will catch all modules
+
+            {
+              loader: 'sass-loader',
+              options: {
+                sourceMap: process.env.NODE_ENV !== 'production',
+              },
+            },
+
             // that fall through the other loaders.
             {
               loader: require.resolve('file-loader'),
